@@ -1,0 +1,255 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Anamakine: 127.0.0.1:3306
+-- Üretim Zamanı: 13 Ara 2017, 20:16:03
+-- Sunucu sürümü: 5.7.19
+-- PHP Sürümü: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Veritabanı: `zenkronn`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `apl_user`
+--
+
+DROP TABLE IF EXISTS `apl_user`;
+CREATE TABLE IF NOT EXISTS `apl_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `enabled` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=163 DEFAULT CHARSET=latin1;
+
+--
+-- Tablo döküm verisi `apl_user`
+--
+
+INSERT INTO `apl_user` (`id`, `user_name`, `password`, `enabled`) VALUES
+(1, 'semih', 'semih123', 1),
+(10, 'apluser9', 'apluser9', 1),
+(9, 'apluser8', 'apluser8', 1),
+(8, 'apluser7', 'apluser7', 1),
+(7, 'apluser6', 'apluser6', 1),
+(6, 'apluser5', 'apluser5', 1),
+(5, 'apluser4', 'apluser4', 1),
+(4, 'apluser3', 'apluser3', 1),
+(3, 'apluser2', 'apluser2', 1),
+(2, 'apluser1', 'apluser1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `cross_table`
+--
+
+DROP TABLE IF EXISTS `cross_table`;
+CREATE TABLE IF NOT EXISTS `cross_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apl_user_id` int(11) DEFAULT NULL,
+  `members_id` int(11) DEFAULT NULL,
+  `friendship_date` timestamp NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Tablo döküm verisi `cross_table`
+--
+
+INSERT INTO `cross_table` (`id`, `apl_user_id`, `members_id`, `friendship_date`) VALUES
+(3, 1, 5, '2017-12-13 18:45:41'),
+(4, 2, 6, '2017-12-13 18:51:59'),
+(2, 2, 3, '2017-12-13 18:44:02'),
+(5, 2, 5, '2017-12-13 20:11:37');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `members`
+--
+
+DROP TABLE IF EXISTS `members`;
+CREATE TABLE IF NOT EXISTS `members` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=latin1;
+
+--
+-- Tablo döküm verisi `members`
+--
+
+INSERT INTO `members` (`id`, `name`, `surname`, `username`) VALUES
+(1, 'semih', 'erdem', 'semih'),
+(2, 'apluser1', 'apluser1', 'apluser1'),
+(3, 'apluser2', 'apluser2', 'apluser2'),
+(4, 'apluser3', 'apluser3', 'apluser3'),
+(5, 'apluser4', 'apluser4', 'apluser4'),
+(6, 'apluser5', 'apluser5', 'apluser5'),
+(7, 'apluser6', 'apluser6', 'apluser6'),
+(8, 'apluser7', 'apluser7', 'apluser7'),
+(9, 'apluser8', 'apluser8', 'apluser8'),
+(10, 'apluser9', 'apluser9', 'apluser9'),
+(11, 'member-11', 'member-11', 'member-11'),
+(12, 'member-12', 'member-12', 'member-12'),
+(13, 'member-13', 'member-13', 'member-13'),
+(14, 'member-14', 'member-14', 'member-14'),
+(15, 'member-15', 'member-15', 'member-15'),
+(16, 'member-16', 'member-16', 'member-16'),
+(17, 'member-17', 'member-17', 'member-17'),
+(18, 'member-18', 'member-18', 'member-18'),
+(19, 'member-19', 'member-19', 'member-19'),
+(20, 'member-20', 'member-20', 'member-20'),
+(21, 'member-21', 'member-21', 'member-21'),
+(22, 'member-22', 'member-22', 'member-22'),
+(23, 'member-23', 'member-23', 'member-23'),
+(24, 'member-24', 'member-24', 'member-24'),
+(25, 'member-25', 'member-25', 'member-25'),
+(26, 'member-26', 'member-26', 'member-26'),
+(27, 'member-27', 'member-27', 'member-27'),
+(28, 'member-28', 'member-28', 'member-28'),
+(29, 'member-29', 'member-29', 'member-29'),
+(30, 'member-30', 'member-30', 'member-30'),
+(31, 'member-31', 'member-31', 'member-31'),
+(32, 'member-32', 'member-32', 'member-32'),
+(33, 'member-33', 'member-33', 'member-33'),
+(34, 'member-34', 'member-34', 'member-34'),
+(35, 'member-35', 'member-35', 'member-35'),
+(36, 'member-36', 'member-36', 'member-36'),
+(37, 'member-37', 'member-37', 'member-37'),
+(38, 'member-38', 'member-38', 'member-38'),
+(39, 'member-39', 'member-39', 'member-39'),
+(40, 'member-40', 'member-40', 'member-40'),
+(41, 'member-41', 'member-41', 'member-41'),
+(42, 'member-42', 'member-42', 'member-42'),
+(43, 'member-43', 'member-43', 'member-43'),
+(44, 'member-44', 'member-44', 'member-44'),
+(45, 'member-45', 'member-45', 'member-45'),
+(46, 'member-46', 'member-46', 'member-46'),
+(47, 'member-47', 'member-47', 'member-47'),
+(48, 'member-48', 'member-48', 'member-48'),
+(49, 'member-49', 'member-49', 'member-49'),
+(50, 'member-50', 'member-50', 'member-50'),
+(51, 'member-51', 'member-51', 'member-51'),
+(52, 'member-52', 'member-52', 'member-52'),
+(53, 'member-53', 'member-53', 'member-53'),
+(54, 'member-54', 'member-54', 'member-54'),
+(55, 'member-55', 'member-55', 'member-55'),
+(56, 'member-56', 'member-56', 'member-56'),
+(57, 'member-57', 'member-57', 'member-57'),
+(58, 'member-58', 'member-58', 'member-58'),
+(59, 'member-59', 'member-59', 'member-59'),
+(60, 'member-60', 'member-60', 'member-60'),
+(61, 'member-61', 'member-61', 'member-61'),
+(62, 'member-62', 'member-62', 'member-62'),
+(63, 'member-63', 'member-63', 'member-63'),
+(64, 'member-64', 'member-64', 'member-64'),
+(65, 'member-65', 'member-65', 'member-65'),
+(66, 'member-66', 'member-66', 'member-66'),
+(67, 'member-67', 'member-67', 'member-67'),
+(68, 'member-68', 'member-68', 'member-68'),
+(69, 'member-69', 'member-69', 'member-69'),
+(70, 'member-70', 'member-70', 'member-70'),
+(71, 'member-71', 'member-71', 'member-71'),
+(72, 'member-72', 'member-72', 'member-72'),
+(73, 'member-73', 'member-73', 'member-73'),
+(74, 'member-74', 'member-74', 'member-74'),
+(75, 'member-75', 'member-75', 'member-75'),
+(76, 'member-76', 'member-76', 'member-76'),
+(77, 'member-77', 'member-77', 'member-77'),
+(78, 'member-78', 'member-78', 'member-78'),
+(79, 'member-79', 'member-79', 'member-79'),
+(80, 'member-80', 'member-80', 'member-80'),
+(81, 'member-81', 'member-81', 'member-81'),
+(82, 'member-82', 'member-82', 'member-82'),
+(83, 'member-83', 'member-83', 'member-83'),
+(84, 'member-84', 'member-84', 'member-84'),
+(85, 'member-85', 'member-85', 'member-85'),
+(86, 'member-86', 'member-86', 'member-86'),
+(87, 'member-87', 'member-87', 'member-87'),
+(88, 'member-88', 'member-88', 'member-88'),
+(89, 'member-89', 'member-89', 'member-89'),
+(90, 'member-90', 'member-90', 'member-90'),
+(91, 'member-91', 'member-91', 'member-91'),
+(92, 'member-92', 'member-92', 'member-92'),
+(93, 'member-93', 'member-93', 'member-93'),
+(94, 'member-94', 'member-94', 'member-94'),
+(95, 'member-95', 'member-95', 'member-95'),
+(96, 'member-96', 'member-96', 'member-96'),
+(97, 'member-97', 'member-97', 'member-97'),
+(98, 'member-98', 'member-98', 'member-98'),
+(99, 'member-99', 'member-99', 'member-99'),
+(100, 'member-100', 'member-100', 'member-100'),
+(101, 'member-101', 'member-101', 'member-101'),
+(102, 'member-102', 'member-102', 'member-102'),
+(103, 'member-103', 'member-103', 'member-103'),
+(104, 'member-104', 'member-104', 'member-104'),
+(105, 'member-105', 'member-105', 'member-105'),
+(106, 'member-106', 'member-106', 'member-106'),
+(107, 'member-107', 'member-107', 'member-107'),
+(108, 'member-108', 'member-108', 'member-108'),
+(109, 'member-109', 'member-109', 'member-109'),
+(110, 'member-110', 'member-110', 'member-110'),
+(111, 'member-111', 'member-111', 'member-111'),
+(112, 'member-112', 'member-112', 'member-112'),
+(113, 'member-113', 'member-113', 'member-113'),
+(114, 'member-114', 'member-114', 'member-114'),
+(115, 'member-115', 'member-115', 'member-115'),
+(116, 'member-116', 'member-116', 'member-116'),
+(117, 'member-117', 'member-117', 'member-117'),
+(118, 'member-118', 'member-118', 'member-118'),
+(119, 'member-119', 'member-119', 'member-119'),
+(120, 'member-120', 'member-120', 'member-120'),
+(121, 'member-121', 'member-121', 'member-121'),
+(122, 'member-122', 'member-122', 'member-122'),
+(123, 'member-123', 'member-123', 'member-123'),
+(124, 'member-124', 'member-124', 'member-124'),
+(125, 'member-125', 'member-125', 'member-125'),
+(126, 'member-126', 'member-126', 'member-126'),
+(127, 'member-127', 'member-127', 'member-127'),
+(128, 'member-128', 'member-128', 'member-128'),
+(129, 'member-129', 'member-129', 'member-129'),
+(130, 'member-130', 'member-130', 'member-130'),
+(131, 'member-131', 'member-131', 'member-131'),
+(132, 'member-132', 'member-132', 'member-132'),
+(133, 'member-133', 'member-133', 'member-133'),
+(134, 'member-134', 'member-134', 'member-134'),
+(135, 'member-135', 'member-135', 'member-135'),
+(136, 'member-136', 'member-136', 'member-136'),
+(137, 'member-137', 'member-137', 'member-137'),
+(138, 'member-138', 'member-138', 'member-138'),
+(139, 'member-139', 'member-139', 'member-139'),
+(140, 'member-140', 'member-140', 'member-140'),
+(141, 'member-141', 'member-141', 'member-141'),
+(142, 'member-142', 'member-142', 'member-142'),
+(143, 'member-143', 'member-143', 'member-143'),
+(144, 'member-144', 'member-144', 'member-144'),
+(145, 'member-145', 'member-145', 'member-145'),
+(146, 'member-146', 'member-146', 'member-146'),
+(147, 'member-147', 'member-147', 'member-147'),
+(148, 'member-148', 'member-148', 'member-148'),
+(149, 'member-149', 'member-149', 'member-149'),
+(150, 'member-150', 'member-150', 'member-150');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

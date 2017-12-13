@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseWithMenuLayout" template="/WEB-INF/views/templates/BaseWithMenuTemplate.jsp">
+		<put-attribute name="title" value="SOA eXpress v2.0" />
+		<put-attribute name="header" value="/WEB-INF/views/templates/Header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/templates/Menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/templates/Footer.jsp" />
+	</definition>
+
+	<definition name="Login" extends="loginLayout">
+		<put-attribute name="title" value="Zenkronn" />
+		<put-attribute name="body" value="/WEB-INF/views/Login.jsp" />
+	</definition>
+
+	<definition name="loginLayout" template="/WEB-INF/views/templates/LoginLayout.jsp">
+		<put-attribute name="title" value="Zenkronn" />
+		<put-attribute name="header" value="/WEB-INF/views/templates/Header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/templates/Footer.jsp" />
+	</definition>
+	
+	<definition name="ViewMainFrame" extends="baseWithMenuLayout">
+		<put-attribute name="title" value="Zenkronn" />
+		<put-attribute name="body" value="/WEB-INF/views/ViewMainFrame.jsp" />
+	</definition>
+	
+	<definition name="ViewMembers" extends="baseWithMenuLayout">
+		<put-attribute name="title" value="Zenkronn" />
+		<put-attribute name="body" value="/WEB-INF/views/ViewMembers.jsp" />
+	</definition>
+	
+	<definition name="ViewMutualFriends" extends="baseWithMenuLayout">
+		<put-attribute name="title" value="Zenkronn" />
+		<put-attribute name="body" value="/WEB-INF/views/ViewMutualFriends.jsp" />
+	</definition>
+	
+	<definition name="Help" extends="baseWithMenuLayout">
+		<put-attribute name="title" value="SOA eXpress v2.0 - Help" />
+		<put-attribute name="body" value="/WEB-INF/views/Help.jsp" />
+	</definition>
+
+</tiles-definitions>

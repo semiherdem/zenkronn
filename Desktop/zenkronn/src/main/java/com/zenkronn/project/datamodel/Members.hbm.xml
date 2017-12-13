@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 13, 2017 10:39:14 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="zenkronn" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.zenkronn.project.datamodel.Members" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="members">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="increment"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="surname" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="surname" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="username" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
